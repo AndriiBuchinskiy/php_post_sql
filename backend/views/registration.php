@@ -44,14 +44,14 @@ $_SESSION['phNumber'] = $phNumberValidator->validate();
 $sexValidator = new \Palmo\backend\valid\Sex($sex);
 $_SESSION['sex'] = $sexValidator->validate();
 
-if(empty($_SESSION['login']) || empty($_SESSION['password'])
-    || empty($_SESSION['check_pass']) || empty($_SESSION['city'])
-    || empty($_SESSION['phNumber']) || empty($_SESSION['email']) || empty($_SESSION['sex'])) {
+if(!empty($_SESSION['login']) || !empty($_SESSION['password'])
+    || !empty($_SESSION['check_pass']) || !empty($_SESSION['city'])
+    || !empty($_SESSION['phNumber']) || !empty($_SESSION['email']) || !empty($_SESSION['sex'])) {
     header('Location:' . "regForm.php");
 } else {
     $user = ['login' => $login, 'password' => $password, 'email' => $email, 'city' => $city, 'phNumber' => $phNumber, 'sex' => $sex];
     $request = $db->query("Insert Into users (login,password,email,city,phNumber,sex) VALUES (:login ,:password,:email,:city,:phNumber,:sex)", $user);
-    $db->disconnect();
+
     $_SESSION['loggedIn'] = true;
     $_SESSION['username'] = $login;
     header('Location: ' . "http://localhost:85/layout/createPostForm.php");

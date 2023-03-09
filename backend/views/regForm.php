@@ -109,16 +109,16 @@ session_start();
             <div class="form-group row">
                 <label for="city" class="col-md-2 col-form-label">Місто</label>
                 <div class="col-md-10">
-                    <textarea
+                    <input
                         name="city"
                         id="city"
                         class="form-control"
                     >
-                    </textarea>
+
                     <div class="invalid-feedback"></div>
                     <?php
 
-                    if (isset($_SESSION['city']['message']))
+                    if (isset($_SESSION['city']))
                     {
                         echo "<h2 style='color: red'>" . $_SESSION['city']['message'] . "</h2><br>";
                         unset($_SESSION['city']);

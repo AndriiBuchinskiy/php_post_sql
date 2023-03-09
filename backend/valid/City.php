@@ -10,11 +10,12 @@ class City extends Validator
     public function __construct($city)
     {
         $this->city = $city;
+
     }
 
     public function validate()
     {
-        if (strlen($this->city) < 2 || strlen($this->city) > 20) {
+        if (strlen($this->city) <=1 || strlen($this->city) >= 20) {
             return ['type' => "city", 'message' => "Некоректна назва міста"];
         }
 

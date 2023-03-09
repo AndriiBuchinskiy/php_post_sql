@@ -72,14 +72,14 @@ if(!isset($_SESSION['loggedIn']))
             <div class="form-group row">
                 <label for="annotation" class="col-md-2 col-form-label">Аннотація</label>
                 <div class="col-md-10">
-                    <textarea
+                    <input
                         name="annotation"
                         id="annotation"
                         class="form-control"
                         cols="30"
                         rows="10"
                     >
-                    </textarea>
+                    </input>
                     <div class="invalid-feedback"></div>
                     <?php
 
@@ -96,14 +96,13 @@ if(!isset($_SESSION['loggedIn']))
             <div class="form-group row">
                 <label for="content" class="col-md-2 col-form-label">Текст поста</label>
                 <div class="col-md-10">
-                    <textarea
+                    <input
                         name="content"
                         id="content"
                         class="form-control"
-                        cols="30"
-                        rows="10"
+
                     >
-                    </textarea>
+
                     <div class="invalid-feedback"></div>
                     <?php
 

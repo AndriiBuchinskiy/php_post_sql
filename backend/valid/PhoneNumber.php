@@ -16,8 +16,8 @@ class PhoneNumber extends Validator
 
         $this->phoneNumber = preg_replace('/\D/', '', $this->phoneNumber);
 
-        if (!str_starts_with($this->phoneNumber, '+380'))  {
-            return ['type' => "phNumber", 'message' => "Телефон має починатись з +380"];
+        if (!str_starts_with($this->phoneNumber, '380') || strlen($this->phoneNumber) !== 12 )  {
+            return ['type' => "phNumber", 'message' => "Телефон має починатись з 380"];
         }
 
     }
